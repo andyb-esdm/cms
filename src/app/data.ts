@@ -10,12 +10,16 @@ export const cmsData: CmsData = {
                 { id: 3, name: 'clear litter', projectTypeCode: 2 }
             ]
         },
-        { siteCode: 'NNR002', name: 'Bluebell Wood', projects: [
-            { id: 4, name: 'andyb mammal survey', projectTypeCode: 1, percentageCompleted: 20 }
-        ] },
-        { siteCode: 'NNR003', name: 'Beech Wood', projects: [
-            { id: 5, name: 'andyb other', projectTypeCode: 5 }
-        ] },
+        {
+            siteCode: 'NNR002', name: 'Bluebell Wood', projects: [
+                { id: 4, name: 'andyb mammal survey', projectTypeCode: 1, percentageCompleted: 20 }
+            ]
+        },
+        {
+            siteCode: 'NNR003', name: 'Beech Wood', projects: [
+                { id: 5, name: 'andyb other', projectTypeCode: 5 }
+            ]
+        },
         { siteCode: 'NNR004', name: 'Table Mountain' },
         { siteCode: 'NNR005', name: 'Llangattock Escarpment' }
     ],
