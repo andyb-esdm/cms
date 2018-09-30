@@ -16,6 +16,7 @@ import { WizardStepComponent } from './wizard-step/wizard-step.component';
 import { SitesListComponent } from './sites-list/sites-list.component';
 import { SiteDetailsComponent } from './site-details/site-details.component';
 import { ProjectsListComponent } from './projects-list/projects-list.component';
+import { MapPageComponent } from './map-page/map-page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ProjectsListComponent } from './projects-list/projects-list.component';
     WizardStepComponent,
     SitesListComponent,
     SiteDetailsComponent,
-    ProjectsListComponent
+    ProjectsListComponent,
+    MapPageComponent
   ],
   imports: [
     BrowserModule,

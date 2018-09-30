@@ -1,6 +1,6 @@
 <h2>Projects for {{ siteCode }}</h2>
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let project of projects">
-    {{ project.id }} {{ project.name }}
+    {{ project.id }} {{ project.name }} ({{ project.percentageCompleted ? project.percentageCompleted : 0 }})
   </li>
 </ul>
