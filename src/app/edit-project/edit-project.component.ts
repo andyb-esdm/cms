@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { CmsService } from '../cms.service';
 
 @Component({
   selector: 'app-edit-project',
@@ -14,18 +15,24 @@ export class EditProjectComponent implements OnInit {
     email: 'test@test.com'
   };
 
+  selectedProjectTypes = [];
+  projectTypes = [];
+
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private cmsService: CmsService
   ) { }
 
   ngOnInit() {
     this.siteCode = this.route.snapshot.params['siteCode'];
+    this.projectTypes = this.cmsService.getProjectTypes();
     console.log(this.siteCode);
     console.log(this.data.email);
   }
 
   onStep1Next() {
+    console.log(this.selectedProjectTypes);
 
   }
 

@@ -1,31 +1,57 @@
 {{siteCode}}
 
 <app-form-wizard>
-    <app-wizard-step [title]="'Step1'" [isValid]="projectForm.form.valid" (Next)="onStep1Next($event)">
-      <h1>Step1</h1>
-      <form #projectForm="ngForm">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" name="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"
-            [(ngModel)]="data.email" required>
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-      </form>
-    </app-wizard-step>
-    <app-wizard-step [title]="'Step2'" (Next)="onStep2Next($event)">
-      <h1>Step2</h1>
-    </app-wizard-step>
-    <app-wizard-step [title]="'Step3'" (Next)="onStep3Next($event)">
-      <h1>Step3</h1>
-    </app-wizard-step>
-    <app-wizard-step [title]="'Step4'" (Complete)="onComplete($event)">
-      <div [ngSwitch]="isCompleted">
-        <div *ngSwitchDefault>
-          <h1>Step4</h1>
-        </div>
-        <div *ngSwitchCase="true">
-          <h4>Thank you! You have completed all the steps.</h4>
-        </div>
+  <app-wizard-step [title]="'Step1'" [isValid]="projectForm.form.valid" (Next)="onStep1Next($event)">
+    <h1>Step1</h1>
+    <form #projectForm="ngForm">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" name="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder="Enter email" [(ngModel)]="data.email" required>
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
       </div>
-    </app-wizard-step>
-  </app-form-wizard>
+
+      <ng-select [items]="projectTypes" [multiple]="true" bindLabel="name" groupBy="type" [selectableGroup]="false"
+        [closeOnSelect]="false" bindValue="id" [(ngModel)]="selectedProjectTypes" name="selectProjectTypes">
+        <ng-template ng-optgroup-tmp let-item="item" let-item$="item$" let-index="index">
+          <!-- <input id="item-{{index}}" name="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{item.type | uppercase}} -->
+          <span id="item-{{index}}"> {{item.type | uppercase}} </span>
+        </ng-template>
+        <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+          <input id="item-{{index}}" name="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{item.name}}
+        </ng-template>
+      </ng-select>
+      
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <p>
+        Selected project types: {{ selectedProjectTypes }}
+      </p>
+
+    </form>
+  </app-wizard-step>
+  <app-wizard-step [title]="'Step2'" (Next)="onStep2Next($event)">
+    <h1>Step2</h1>
+  </app-wizard-step>
+  <app-wizard-step [title]="'Step3'" (Next)="onStep3Next($event)">
+    <h1>Step3</h1>
+  </app-wizard-step>
+  <app-wizard-step [title]="'Step4'" (Complete)="onComplete($event)">
+    <div [ngSwitch]="isCompleted">
+      <div *ngSwitchDefault>
+        <h1>Step4</h1>
+      </div>
+      <div *ngSwitchCase="true">
+        <h4>Thank you! You have completed all the steps.</h4>
+      </div>
+    </div>
+  </app-wizard-step>
+</app-form-wizard>
