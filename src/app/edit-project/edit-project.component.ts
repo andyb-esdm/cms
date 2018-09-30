@@ -9,6 +9,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class EditProjectComponent implements OnInit {
 
   siteCode: string;
+  isCompleted: boolean;
+  data = {
+    email: 'test@test.com'
+  };
 
   constructor(
     private route: ActivatedRoute,
@@ -17,6 +21,25 @@ export class EditProjectComponent implements OnInit {
 
   ngOnInit() {
     this.siteCode = this.route.snapshot.params['siteCode'];
+    console.log(this.siteCode);
+    console.log(this.data.email);
+  }
+
+  onStep1Next() {
+
+  }
+
+  onStep2Next() {
+
+  }
+
+  onStep3Next() {
+
+  }
+
+  onComplete(a) {
+    this.isCompleted = true;
+    console.log(a);
   }
 
 }

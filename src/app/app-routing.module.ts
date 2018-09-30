@@ -4,10 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { EditProjectComponent } from './edit-project/edit-project.component';
+import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'edit-project/:siteCode', component: EditProjectComponent},
+  { path: 'map', component: MapComponent },
   {
     path: '',
     redirectTo: '/dashboard',
