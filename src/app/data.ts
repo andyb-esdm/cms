@@ -7,7 +7,7 @@ export const cmsData: CmsData = {
             siteCode: 'NNR001', name: 'Gwernvale Farm', projects: [
                 { id: 1, name: 'monitor small mammals with traps', projectTypeCode: 1, percentageCompleted: 50 },
                 { id: 2, name: 'monitor basking lizards by survey', projectTypeCode: 1 },
-                { id: 3, name: 'clear litter', projectTypeCode: 2 }
+                { id: 3, name: 'clear litter', projectTypeCode: 8 }
             ]
         },
         {
