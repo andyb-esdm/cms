@@ -18,6 +18,13 @@ export class CmsService {
     return data.cmsData.sites.find(site => site.siteCode === siteCode);
   }
 
+  getFilteredSites(filter: string) {
+    filter = filter.toLowerCase();
+    return data.cmsData.sites.filter(
+      site => site.siteCode.toLowerCase().indexOf(filter) !== -1 || site.name.toLowerCase().indexOf(filter) !== -1
+    );
+  }
+
   getProjectTypes() {
     return data.cmsData.projectTypes;
   }

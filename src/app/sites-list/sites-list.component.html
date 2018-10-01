@@ -1,4 +1,11 @@
 <h2>Sites</h2>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" [(ngModel)]="filter" (input)="filterSites($event)">
+  <div class="input-group-append">
+    <span class="input-group-text" id="basic-addon2"><i class="fa fa-search"></i></span>
+  </div>
+</div>
+
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let site of sites">
     <a [routerLink]="['/site-details', site.siteCode]">{{ site.name }}</a><a [routerLink]="['/projects-list', site.siteCode]"> {{ site.projects ? site.projects.length : 0 }}</a>

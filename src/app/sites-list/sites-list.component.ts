@@ -9,11 +9,18 @@ import { CmsService } from '../cms.service';
 export class SitesListComponent implements OnInit {
 
   sites = [];
+  filter = '';
 
   constructor(private cmsService: CmsService) { }
 
   ngOnInit() {
     this.sites = this.cmsService.getSites();
+  }
+
+  filterSites() {
+    console.log('filtering');
+    this.sites = this.cmsService.getFilteredSites(this.filter);
+    console.log(this.sites);
   }
 
 }
