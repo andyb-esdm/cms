@@ -3,7 +3,12 @@ import { Component, OnInit } from '@angular/core';
 import Map from 'ol/map';
 import View from 'ol/view';
 import TileLayer from 'ol/layer/tile';
+import VectorLayer from 'ol/layer/vector';
 import XYZ from 'ol/source/XYZ';
+import VectorSource from 'ol/source/vector';
+import GeoJSON from 'ol/format/GeoJSON.js';
+
+import { CmsService } from '../cms.service';
 
 @Component({
   selector: 'app-map',
@@ -12,10 +17,19 @@ import XYZ from 'ol/source/XYZ';
 })
 export class MapComponent implements OnInit {
 
-  constructor() { }
+  map: Map;
+  geoJsonObject;
+
+  constructor(private cmsService: CmsService) { }
 
   ngOnInit() {
-    let map = new Map({
+    this.geoJsonObject = this.cmsService.getGeoJSON();
+    this.setupMap();
+    this.setupVectorLayers();
+  }
+
+  private setupMap() {
+    this.map = new Map({
       target: 'map',
       layers: [
         new TileLayer({
@@ -31,4 +45,17 @@ export class MapComponent implements OnInit {
     });
   }
 
+  private setupVectorLayers() {
+    const f = (new GeoJSON()).readFeatures(this.geoJsonObject);
+    console.log(f);
+
+    const vectorSource = new VectorSource({
+      features: (new GeoJSON()).readFeatures(this.geoJsonObject)
+    });
+
+    this.map.addLayer(new VectorLayer({
+      source: vectorSource
+    })
+    );
+  }
 }

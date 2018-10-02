@@ -44,9 +44,8 @@ export class EditProjectComponent implements OnInit {
 
   }
 
-  onComplete(a) {
+  onComplete() {
     this.isCompleted = true;
-    console.log(a);
   }
 
 }

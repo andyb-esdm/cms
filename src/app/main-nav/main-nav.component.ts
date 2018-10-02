@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainNavComponent implements OnInit {
 
+  show = false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  toggleCollapse() {
+    this.show = !this.show;
   }
 
 }
