@@ -17,6 +17,8 @@ import { SitesListComponent } from './sites-list/sites-list.component';
 import { SiteDetailsComponent } from './site-details/site-details.component';
 import { ProjectsListComponent } from './projects-list/projects-list.component';
 import { MapPageComponent } from './map-page/map-page.component';
+import { SitesComponent } from './sites/sites.component';
+import { HelpComponent } from './help/help.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { MapPageComponent } from './map-page/map-page.component';
     SitesListComponent,
     SiteDetailsComponent,
     ProjectsListComponent,
-    MapPageComponent
+    MapPageComponent,
+    SitesComponent,
+    HelpComponent
   ],
   imports: [
     BrowserModule,

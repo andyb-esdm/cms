@@ -1,4 +1,208 @@
-<h1>Dashboard</h1>
+<h2>Dashboard</h2>
 <a [routerLink]="['/edit-project', 'NNR001']">Edit project plan for site NNR001</a>
 
-<app-sites-list></app-sites-list>
+<div class="card-columns mt-3">
+    <!-- help -->
+    <div class="card">
+        <h5 class="card-header bg-primary text-light">Help
+            <i class="fa fa-question-circle pull-right"></i>
+        </h5>
+        <div class="card-body">
+            <ul>
+                <li>
+                    <i class="fa fa-question-circle"></i>
+                    <a href="#">Work Recording Guidance</a>
+                </li>
+
+                <li>
+                    <i class="fa fa-question-circle"></i>
+                    <a href="#">Copying mapping from an external GIS layer into CMSi</a>
+                </li>
+                <li>
+                    <i class="fa fa-question-circle"></i>
+                    <a href="#">Management Planning Guidance</a>
+                </li>
+                <li>
+                    <i class="fa fa-question-circle"></i>
+                    <a href="#">End of Year Review</a>
+                </li>
+                <li>
+                    <i class="fa fa-question-circle"></i>
+                    <a href="#">Producing a Full Management Plan Report</a>
+                </li>
+                <li>
+                    <i class="fa fa-question-circle"></i>
+                    <a href="#">Quick Ways to Enter a Management Plan</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- bookmarks -->
+    <div class="card">
+        <h5 class="card-header bg-primary text-light">Bookmarks
+            <i class="fa fa-star pull-right"></i>
+        </h5>
+        <div class="card-body">
+            <app-sites-list></app-sites-list>
+            <!-- <ul>
+                <li>
+                    <i class="fa fa-fw fa-star site"></i>
+                    <a href="#">Bron Coed</a>
+                </li>
+                <li>
+                    <i class="fa fa-fw fa-star site"></i>
+                    <a href="#">Hanley Fen</a>
+                </li>
+                <li>
+                    <i class="fa fa-fw fa-star site"></i>
+                    <a href="#">Penyfan</a>
+                </li>
+                <li>
+                    <i class="fa fa-fw fa-star green"></i>
+                    <a href="#">Survey Event Form</a>
+                </li>
+                <li>
+                    <i class="fa fa-fw fa-male contact"></i>
+                    <a href="#">Bangor University</a>
+                </li>
+            </ul> -->
+        </div>
+    </div>
+
+    <!-- site report -->
+    <div class="card">
+        <h5 class="card-header bg-primary text-light">Site Report
+            <i class="fa fa-pie-chart pull-right"></i>
+        </h5>
+        <div class="card-body">
+            <div class="row">
+                <img class="img-fluid mx-auto" src="./assets/pie-chart.png">
+            </div>
+
+            <p class="card-text">
+                A summary chart
+            </p>
+        </div>
+    </div>
+
+    <!-- reporting -->
+    <div class="card">
+        <h5 class="card-header bg-primary text-light">Reporting
+            <i class="fa fa-list pull-right"></i>
+        </h5>
+        <div class="card-body">
+
+            <ul>
+                <li>
+                    <i class="fa fa-chevron-right"></i>
+                    <a href="#">Annual Project List with Resources</a>
+                </li>
+                <li>
+                    <i class="fa fa-chevron-right"></i>
+                    <a href="#">Multi-site Resource Summary</a>
+                </li>
+                <li>
+                    <i class="fa fa-chevron-right"></i>
+                    <a href="#">Annual Project Expenditure Review</a>
+                </li>
+                <li>
+                    <i class="fa fa-chevron-right"></i>
+                    <a href="#">Work Plan for the Current User</a>
+                </li>
+                <li>
+                    <i class="fa fa-chevron-right"></i>
+                    <a href="#">Staff Work Plan - Project Descriptions</a>
+                </li>
+                <li>
+                    <i class="fa fa-chevron-right"></i>
+                    <a href="#">Allocation Edits</a>
+                </li>
+                <li>
+                    <i class="fa fa-chevron-right"></i>
+                    <a href="#">Natura 2000 Corporate Report</a>
+                </li>
+                <li>
+                    <i class="fa fa-chevron-right"></i>
+                    <a href="#">Filtered Features List</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- work recording -->
+    <div class="card">
+        <h5 class="card-header bg-primary text-light">Work Recording
+            <i class="fa fa-edit pull-right"></i>
+        </h5>
+        <div class="card-body">
+
+            <ul>
+                <li>
+                    <i class="fa fa-pencil"></i>
+                    <a href="#">Weekly work recording</a>
+                </li>
+                <li>
+                    <i class="fa fa-check"></i>
+                    <a href="#">Approve weekly work recording entries</a>
+                </li>
+                <li>
+                    <i class="fa fa-search"></i>
+                    <a href="#">Object inspection</a>
+                </li>
+                <li>
+                    <i class="fa fa-database"></i>
+                    <a href="#">Import remote work</a>
+                </li>
+                <li>
+                    <i class="fa fa-pencil"></i>
+                    <a href="#">Diary entry form</a>
+                </li>
+                <li>
+                    <i class="fa fa-pencil"></i>
+                    <a href="#">Quick work recording</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- administration -->
+    <div class="card">
+        <h5 class="card-header bg-primary text-light">Administration
+            <i class="fa fa-cog pull-right"></i>
+        </h5>
+        <div class="card-body">
+
+            <ul>
+                <li>
+                    <i class="fa fw fa-wrench grey"></i>
+                    <a href="#">Configuration</a> 
+                </li>
+                <li>
+                    <i class="fa fw fa-users green"></i> 
+                    <a href="#">Users</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- map -->
+    <div class="card">
+        <h5 class="card-header bg-primary text-light">Map Report
+            <i class="fa fa-globe pull-right"></i>
+        </h5>
+        <div class="card-body">
+            <app-map></app-map>
+            <!-- <div class="row">
+                <img class="img-fluid mx-auto" src="./img/map.png">
+            </div> -->
+
+            <p class="card-text">
+                A map report
+            </p>
+        </div>
+    </div>
+</div>
+

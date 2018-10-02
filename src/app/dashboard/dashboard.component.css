@@ -1,0 +1,9 @@
+
+/* put a space after the fa icons
+    really?
+    why do I get a space in the html version?
+*/
+i::after {
+    content: ' ';
+    white-space: pre;
+}

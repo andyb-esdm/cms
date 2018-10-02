@@ -14,13 +14,12 @@ export class SitesListComponent implements OnInit {
   constructor(private cmsService: CmsService) { }
 
   ngOnInit() {
-    this.sites = this.cmsService.getSites();
+    // this.sites = this.cmsService.getSites();
+    this.filterSites();
   }
 
   filterSites() {
-    console.log('filtering');
     this.sites = this.cmsService.getFilteredSites(this.filter);
-    console.log(this.sites);
   }
 
 }

@@ -7,12 +7,16 @@ import { EditProjectComponent } from './edit-project/edit-project.component';
 import { SiteDetailsComponent } from './site-details/site-details.component';
 import { ProjectsListComponent } from './projects-list/projects-list.component';
 import { MapPageComponent } from './map-page/map-page.component';
+import { SitesComponent } from './sites/sites.component';
+import { HelpComponent } from './help/help.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'edit-project/:siteCode', component: EditProjectComponent },
+  { path: 'sites', component: SitesComponent },
   { path: 'site-details/:siteCode', component: SiteDetailsComponent },
   { path: 'projects-list/:siteCode', component: ProjectsListComponent },
+  { path: 'help', component: HelpComponent },
   { path: 'map', component: MapPageComponent },
   {
     path: '',
