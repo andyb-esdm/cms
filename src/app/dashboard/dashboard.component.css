@@ -7,3 +7,7 @@ i::after {
     content: ' ';
     white-space: pre;
 }
+
+.card-header a {
+    color: white;
+}

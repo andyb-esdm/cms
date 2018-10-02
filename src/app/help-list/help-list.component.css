@@ -1,0 +1,4 @@
+i::after {
+    content: ' ';
+    white-space: pre;
+}

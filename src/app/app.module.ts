@@ -19,6 +19,9 @@ import { ProjectsListComponent } from './projects-list/projects-list.component';
 import { MapPageComponent } from './map-page/map-page.component';
 import { SitesComponent } from './sites/sites.component';
 import { HelpComponent } from './help/help.component';
+import { HelpListComponent } from './help-list/help-list.component';
+import { HelpDetailsComponent } from './help-details/help-details.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { HelpComponent } from './help/help.component';
     ProjectsListComponent,
     MapPageComponent,
     SitesComponent,
-    HelpComponent
+    HelpComponent,
+    HelpListComponent,
+    HelpDetailsComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

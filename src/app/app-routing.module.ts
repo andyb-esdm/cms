@@ -9,14 +9,16 @@ import { ProjectsListComponent } from './projects-list/projects-list.component';
 import { MapPageComponent } from './map-page/map-page.component';
 import { SitesComponent } from './sites/sites.component';
 import { HelpComponent } from './help/help.component';
+import { HelpDetailsComponent } from './help-details/help-details.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'edit-project/:siteCode', component: EditProjectComponent },
+  { path: 'edit-project/:id', component: EditProjectComponent },
   { path: 'sites', component: SitesComponent },
   { path: 'site-details/:siteCode', component: SiteDetailsComponent },
   { path: 'projects-list/:siteCode', component: ProjectsListComponent },
   { path: 'help', component: HelpComponent },
+  { path: 'help-details/:id', component: HelpDetailsComponent },
   { path: 'map', component: MapPageComponent },
   {
     path: '',

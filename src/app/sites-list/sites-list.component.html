@@ -8,6 +8,7 @@
 
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let site of sites">
+      <i class="fa fa-fw fa-map-marker site"></i>
     <a [routerLink]="['/site-details', site.siteCode]">{{ site.name }}</a><a [routerLink]="['/projects-list', site.siteCode]"> {{ site.projects ? site.projects.length : 0 }}</a>
   </li>
 </ul>

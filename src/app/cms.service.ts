@@ -37,4 +37,14 @@ export class CmsService {
   getGeoJSON() {
     return data.geojsonObject;
   }
+
+  getHelpItems() {
+    return data.helpItems;
+  }
+
+  getHelp(id: number) {
+    return data.helpItems.find(item => {
+      return item.id === id;
+    });
+  }
 }

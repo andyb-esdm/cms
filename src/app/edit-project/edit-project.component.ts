@@ -9,7 +9,7 @@ import { CmsService } from '../cms.service';
 })
 export class EditProjectComponent implements OnInit {
 
-  siteCode: string;
+  id: number;
   isCompleted: boolean;
   data = {
     email: 'test@test.com'
@@ -25,10 +25,8 @@ export class EditProjectComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.siteCode = this.route.snapshot.params['siteCode'];
+    this.id = +this.route.snapshot.params['id'];
     this.projectTypes = this.cmsService.getProjectTypes();
-    console.log(this.siteCode);
-    console.log(this.data.email);
   }
 
   onStep1Next() {

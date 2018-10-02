@@ -46,9 +46,6 @@ export class MapComponent implements OnInit {
   }
 
   private setupVectorLayers() {
-    const f = (new GeoJSON()).readFeatures(this.geoJsonObject);
-    console.log(f);
-
     const vectorSource = new VectorSource({
       features: (new GeoJSON()).readFeatures(this.geoJsonObject)
     });

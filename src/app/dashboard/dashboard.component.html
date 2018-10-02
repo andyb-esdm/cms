@@ -2,41 +2,15 @@
 <a [routerLink]="['/edit-project', 'NNR001']">Edit project plan for site NNR001</a>
 
 <div class="card-columns mt-3">
-    <!-- help -->
-    <div class="card">
-        <h5 class="card-header bg-primary text-light">Help
+    <app-card>
+        <h5 class="card-header bg-primary text-light">
+            <a [routerLink]="['/help']">Help</a>
             <i class="fa fa-question-circle pull-right"></i>
         </h5>
         <div class="card-body">
-            <ul>
-                <li>
-                    <i class="fa fa-question-circle"></i>
-                    <a href="#">Work Recording Guidance</a>
-                </li>
-
-                <li>
-                    <i class="fa fa-question-circle"></i>
-                    <a href="#">Copying mapping from an external GIS layer into CMSi</a>
-                </li>
-                <li>
-                    <i class="fa fa-question-circle"></i>
-                    <a href="#">Management Planning Guidance</a>
-                </li>
-                <li>
-                    <i class="fa fa-question-circle"></i>
-                    <a href="#">End of Year Review</a>
-                </li>
-                <li>
-                    <i class="fa fa-question-circle"></i>
-                    <a href="#">Producing a Full Management Plan Report</a>
-                </li>
-                <li>
-                    <i class="fa fa-question-circle"></i>
-                    <a href="#">Quick Ways to Enter a Management Plan</a>
-                </li>
-            </ul>
+            <app-help-list></app-help-list>
         </div>
-    </div>
+    </app-card>
 
     <!-- bookmarks -->
     <div class="card">
@@ -45,28 +19,6 @@
         </h5>
         <div class="card-body">
             <app-sites-list></app-sites-list>
-            <!-- <ul>
-                <li>
-                    <i class="fa fa-fw fa-star site"></i>
-                    <a href="#">Bron Coed</a>
-                </li>
-                <li>
-                    <i class="fa fa-fw fa-star site"></i>
-                    <a href="#">Hanley Fen</a>
-                </li>
-                <li>
-                    <i class="fa fa-fw fa-star site"></i>
-                    <a href="#">Penyfan</a>
-                </li>
-                <li>
-                    <i class="fa fa-fw fa-star green"></i>
-                    <a href="#">Survey Event Form</a>
-                </li>
-                <li>
-                    <i class="fa fa-fw fa-male contact"></i>
-                    <a href="#">Bangor University</a>
-                </li>
-            </ul> -->
         </div>
     </div>
 
@@ -177,10 +129,10 @@
             <ul>
                 <li>
                     <i class="fa fw fa-wrench grey"></i>
-                    <a href="#">Configuration</a> 
+                    <a href="#">Configuration</a>
                 </li>
                 <li>
-                    <i class="fa fw fa-users green"></i> 
+                    <i class="fa fw fa-users green"></i>
                     <a href="#">Users</a>
                 </li>
 
@@ -205,4 +157,3 @@
         </div>
     </div>
 </div>
-

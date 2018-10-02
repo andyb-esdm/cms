@@ -2,5 +2,6 @@
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let project of projects">
     {{ project.id }} {{ project.name }} ({{ project.percentageCompleted ? project.percentageCompleted : 0 }})
+    <a [routerLink]="['/edit-project', project.id]">Edit project {{ project.id }}</a>
   </li>
 </ul>

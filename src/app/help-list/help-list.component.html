@@ -1,0 +1,6 @@
+<ul>
+    <li *ngFor="let item of helpItems">
+        <i class="fa fa-question-circle-o"></i>
+        <a [routerLink]="['/help-details', item.id ]">{{ item.title }}</a>
+    </li>
+</ul>

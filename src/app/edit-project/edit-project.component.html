@@ -1,4 +1,6 @@
-{{siteCode}}
+<h2>
+  Editing project {{ id }}
+</h2>
 
 <app-form-wizard>
   <app-wizard-step [title]="'Step1'" [isValid]="projectForm.form.valid" (Next)="onStep1Next()">
@@ -21,7 +23,7 @@
           <input id="item-{{index}}" name="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{item.name}}
         </ng-template>
       </ng-select>
-      
+
       <br>
       <br>
       <br>
