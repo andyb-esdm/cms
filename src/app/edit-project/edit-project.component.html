@@ -4,7 +4,6 @@
 
 <app-form-wizard>
   <app-wizard-step [title]="'Step1'" [isValid]="projectForm.form.valid" (Next)="onStep1Next()">
-    <h1>Step1</h1>
     <form #projectForm="ngForm">
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
@@ -32,7 +31,6 @@
   </app-wizard-step>
   <app-wizard-step [title]="'Step2'" (Next)="onStep2Next()">
     <div class="wizard-step-body">
-        <h1>Step2</h1>
 
         <form class="form-inline">
           <div class="form-group">
@@ -54,13 +52,9 @@
 
   </app-wizard-step>
   <app-wizard-step [title]="'Step3'" (Next)="onStep3Next()">
-    <h1>Step3</h1>
   </app-wizard-step>
   <app-wizard-step [title]="'Step4'" (Complete)="onComplete()">
     <div [ngSwitch]="isCompleted">
-      <div *ngSwitchDefault>
-        <h1>Step4</h1>
-      </div>
       <div *ngSwitchCase="true">
         <h4>Thank you! You have completed all the steps.</h4>
       </div>

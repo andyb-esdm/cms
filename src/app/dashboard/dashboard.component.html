@@ -1,7 +1,9 @@
 <h2>Dashboard</h2>
-<a [routerLink]="['/edit-project', 'NNR001']">Edit project plan for site NNR001</a>
+<div>
+    <a [routerLink]="['/edit-project', 'NNR001']">Edit project plan for site NNR001</a>
+</div>
 
-<div class="card-columns mt-3">
+<div class="grid-wrapper">
     <app-card>
         <h5 class="card-header bg-primary text-light">
             <a [routerLink]="['/help']">Help</a>
@@ -13,17 +15,18 @@
     </app-card>
 
     <!-- bookmarks -->
-    <div class="card">
-        <h5 class="card-header bg-primary text-light">Bookmarks
+    <app-card>
+        <h5 class="card-header bg-primary text-light">
+            <a [routerLink]="['/sites']">Boomarks</a>
             <i class="fa fa-star pull-right"></i>
         </h5>
         <div class="card-body">
             <app-sites-list></app-sites-list>
         </div>
-    </div>
+    </app-card>
 
     <!-- site report -->
-    <div class="card">
+    <app-card>
         <h5 class="card-header bg-primary text-light">Site Report
             <i class="fa fa-pie-chart pull-right"></i>
         </h5>
@@ -36,10 +39,10 @@
                 A summary chart
             </p>
         </div>
-    </div>
+    </app-card>
 
     <!-- reporting -->
-    <div class="card">
+    <app-card>
         <h5 class="card-header bg-primary text-light">Reporting
             <i class="fa fa-list pull-right"></i>
         </h5>
@@ -80,15 +83,14 @@
                 </li>
             </ul>
         </div>
-    </div>
+    </app-card>
 
     <!-- work recording -->
-    <div class="card">
+    <app-card>
         <h5 class="card-header bg-primary text-light">Work Recording
             <i class="fa fa-edit pull-right"></i>
         </h5>
         <div class="card-body">
-
             <ul>
                 <li>
                     <i class="fa fa-pencil"></i>
@@ -117,10 +119,10 @@
 
             </ul>
         </div>
-    </div>
+    </app-card>
 
     <!-- administration -->
-    <div class="card">
+    <app-card>
         <h5 class="card-header bg-primary text-light">Administration
             <i class="fa fa-cog pull-right"></i>
         </h5>
@@ -138,22 +140,22 @@
 
             </ul>
         </div>
-    </div>
+    </app-card>
 
     <!-- map -->
-    <div class="card">
+    <app-card>
         <h5 class="card-header bg-primary text-light">Map Report
             <i class="fa fa-globe pull-right"></i>
         </h5>
         <div class="card-body">
             <app-map></app-map>
             <!-- <div class="row">
-                <img class="img-fluid mx-auto" src="./img/map.png">
-            </div> -->
+                    <img class="img-fluid mx-auto" src="./img/map.png">
+                </div> -->
 
             <p class="card-text">
                 A map report
             </p>
         </div>
-    </div>
+    </app-card>
 </div>

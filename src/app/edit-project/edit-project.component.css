@@ -1,3 +1,10 @@
-.wizard-step-body {
+/* .wizard-step-body {
     height: 500px;
+}
+ */
+
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }

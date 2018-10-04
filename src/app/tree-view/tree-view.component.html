@@ -3,6 +3,8 @@
         <div class="btn-group mr-2" role="group" aria-label="First group">
             <button type="button" class="btn btn-sm btn-secondary" (click)="collapseAll()">Collapse All</button>
             <button type="button" class="btn btn-sm btn-secondary" (click)="expandAll()">Expand All</button>
+            <button type="button" class="btn btn-sm btn-secondary" (click)="expandToSelection()">Expand Selection</button>
+            <span>Selected Item: {{ selectedId }}</span>
         </div>
     </div>
     <app-tree [nodes]="nodes" (select)="onSelected($event)" [selectedId]="selectedId"></app-tree>

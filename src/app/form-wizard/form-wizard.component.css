@@ -7,3 +7,16 @@
 .enabled { cursor: pointer; border-bottom-color: rgb(88, 162, 234); }
 .disabled { color: #ccc; }
 .completed { cursor: default; }
+
+:host {
+    display: flex;
+    height: 100%;
+}
+
+.card {
+    width: 100%;
+}
+
+.card-block {
+    flex-grow: 1;
+}

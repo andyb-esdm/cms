@@ -45,17 +45,15 @@ export class TreeViewComponent implements OnInit {
     }
   }
 
-  private expandToSelection() {
+  expandToSelection() {
+    this.collapseAll();
     if (this.selectedId) {
       let node = this.findNodeById(this.nodes, this.selectedId);
       if (node) {
-        node.collapsed = false;
         while (node.parent) {
           node = this.findNodeById(this.nodes, node.parent);
           node.collapsed = false;
         }
-      } else {
-        console.log('node not found')
       }
     }
   }

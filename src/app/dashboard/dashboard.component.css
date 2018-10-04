@@ -8,6 +8,38 @@ i::after {
     white-space: pre;
 }
 
+:host {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .card-header a {
     color: white;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+@media(min-width: 576px) {
+    .grid-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(min-width: 1200px) {
+    .grid-wrapper {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media(min-width: 1600px) {
+    .grid-wrapper {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
 }
