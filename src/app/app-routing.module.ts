@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'tree', component: TreePageComponent },
   {
     path: '',
-    redirectTo: '/dashboard',
+    component: DashboardComponent,
     pathMatch: 'full'
   },
   { path: '**', component: PageNotFoundComponent }
