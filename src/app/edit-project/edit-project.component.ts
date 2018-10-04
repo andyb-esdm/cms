@@ -14,6 +14,7 @@ export class EditProjectComponent implements OnInit {
   data = {
     email: 'test@test.com'
   };
+  model = {};
 
   selectedProjectTypes = [];
   projectTypes = [];

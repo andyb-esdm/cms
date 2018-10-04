@@ -41,7 +41,27 @@
     </form>
   </app-wizard-step>
   <app-wizard-step [title]="'Step2'" (Next)="onStep2Next()">
-    <h1>Step2</h1>
+    <div class="wizard-step-body">
+        <h1>Step2</h1>
+
+        <form class="form-inline">
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" placeholder="yyyy-mm-dd"
+                     name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"><i class="fa fa-calendar"></i></button>
+              </div>
+            </div>
+          </div>
+        </form>
+        
+        <hr/>
+        <pre>Model: {{ model | json }}</pre>
+    </div>
+    
+
+
   </app-wizard-step>
   <app-wizard-step [title]="'Step3'" (Next)="onStep3Next()">
     <h1>Step3</h1>
