@@ -10,6 +10,7 @@ import { MapPageComponent } from './map-page/map-page.component';
 import { SitesComponent } from './sites/sites.component';
 import { HelpComponent } from './help/help.component';
 import { HelpDetailsComponent } from './help-details/help-details.component';
+import { TreePageComponent } from './tree-page/tree-page.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'help', component: HelpComponent },
   { path: 'help-details/:id', component: HelpDetailsComponent },
   { path: 'map', component: MapPageComponent },
+  { path: 'tree', component: TreePageComponent },
   {
     path: '',
     redirectTo: '/dashboard',

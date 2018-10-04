@@ -3,6 +3,11 @@
 .bg-primary {
     background-color:#0064a3!important;
 }
+.dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #0064a3;
+}
 
 ul {
     list-style: none;

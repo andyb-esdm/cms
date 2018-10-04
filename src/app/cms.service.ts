@@ -47,4 +47,8 @@ export class CmsService {
       return item.id === id;
     });
   }
+
+  getProjectCodes() {
+    return data.projectCodes;
+  }
 }

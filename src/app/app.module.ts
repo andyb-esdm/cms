@@ -23,6 +23,8 @@ import { HelpComponent } from './help/help.component';
 import { HelpListComponent } from './help-list/help-list.component';
 import { HelpDetailsComponent } from './help-details/help-details.component';
 import { CardComponent } from './card/card.component';
+import { TreeComponent } from './tree/tree.component';
+import { TreePageComponent } from './tree-page/tree-page.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { CardComponent } from './card/card.component';
     HelpComponent,
     HelpListComponent,
     HelpDetailsComponent,
-    CardComponent
+    CardComponent,
+    TreeComponent,
+    TreePageComponent
   ],
   imports: [
     BrowserModule,
