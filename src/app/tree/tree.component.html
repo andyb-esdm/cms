@@ -1,3 +1,32 @@
-<p>
-  tree works!
-</p>
+<ul *ngIf="nodes.length">
+  <li *ngFor="let node of nodes" [ngClass]="{ 'no-children': !node.children.length }">
+    <div class="tree-node" [ngClass]="{ 'active': node.id === selectedId }">
+      
+      <ng-container *ngIf="node.children.length;">
+        <ng-container *ngIf="node.collapsed; then collapsed; else expanded">
+        </ng-container>
+        <ng-template #expanded>
+          <button class="btn btn-sm btn-default" (click)="collapse(node)">
+            <i class="fa fa-minus"></i>
+          </button>
+        </ng-template>
+        <ng-template #collapsed>
+          <button class="btn btn-sm btn-default" (click)="expand(node)">
+            <i class="fa fa-plus"></i>
+          </button>
+        </ng-template>
+      </ng-container>
+
+      <button class="btn btn-sm btn-primary ml-2" (click)="onSelected(node)"><i class="fa fa-chevron-right"></i></button>
+
+      <span>
+        {{node.description}}
+      </span>
+
+    </div>
+    <app-tree *ngIf="node.children.length" [nodes]="node.children" (select)="onSelected($event)" [selectedId]="selectedId"
+      [ngbCollapse]="node.collapsed">
+    </app-tree>
+
+  </li>
+</ul>

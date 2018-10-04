@@ -25,6 +25,7 @@ import { HelpDetailsComponent } from './help-details/help-details.component';
 import { CardComponent } from './card/card.component';
 import { TreeComponent } from './tree/tree.component';
 import { TreePageComponent } from './tree-page/tree-page.component';
+import { TreeViewComponent } from './tree-view/tree-view.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { TreePageComponent } from './tree-page/tree-page.component';
     HelpDetailsComponent,
     CardComponent,
     TreeComponent,
-    TreePageComponent
+    TreePageComponent,
+    TreeViewComponent
   ],
   imports: [
     BrowserModule,

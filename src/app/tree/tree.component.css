@@ -1,0 +1,16 @@
+.tree-node {
+    padding: 5px;
+}
+
+.tree-node.active {
+    background-color:#0064a3;
+    color: white;
+}
+
+ul {
+    margin-left: 2rem;
+}
+
+li.no-children {
+    margin-left: 2rem;
+}

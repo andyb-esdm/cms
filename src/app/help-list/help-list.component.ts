@@ -13,7 +13,6 @@ export class HelpListComponent implements OnInit {
 
   ngOnInit() {
     this.helpItems = this.cmsService.getHelpItems();
-    console.log(this.helpItems);
   }
 
 }

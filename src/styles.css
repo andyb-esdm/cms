@@ -1,8 +1,13 @@
 @import "~@ng-select/ng-select/themes/default.theme.css";
 
-.bg-primary {
+html, body {
+    height: 100%;
+}
+
+.bg-primary, .btn-primary {
     background-color:#0064a3!important;
 }
+
 .dropdown-item:active {
     color: #fff;
     text-decoration: none;

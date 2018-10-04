@@ -8,24 +8,24 @@
   <div class="collapse navbar-collapse" [class.show]="show" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/dashboard']" [routerLinkActive]="['active']"><i class="fa fa-home fa-lg"></i> Home</a>
+        <a class="nav-link" [routerLink]="['/dashboard']" [routerLinkActive]="['active']" (click)="toggleCollapse()"><i class="fa fa-home fa-lg"></i> Home</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/sites']" [routerLinkActive]="['active']"><i class="fa fa-map-marker fa-lg"></i> Sites</a>
+          <a class="nav-link" [routerLink]="['/sites']" [routerLinkActive]="['active']" (click)="toggleCollapse()"><i class="fa fa-map-marker fa-lg"></i> Sites</a>
         </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/map']" [routerLinkActive]="['active']"><i class="fa fa-globe fa-lg"></i> Map</a>
+        <a class="nav-link" [routerLink]="['/map']" [routerLinkActive]="['active']" (click)="toggleCollapse()"><i class="fa fa-globe fa-lg"></i> Map</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/help']" [routerLinkActive]="['active']"><i class="fa fa-question-circle-o fa-lg"></i> Help</a>
+        <a class="nav-link" [routerLink]="['/help']" [routerLinkActive]="['active']" (click)="toggleCollapse()"><i class="fa fa-question-circle-o fa-lg"></i> Help</a>
       </li>
       <li class="nav-item dropdown" ngbDropdown>
         <a class="nav-link test dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
           aria-haspopup="true" aria-expanded="false" ngbDropdownToggle>
-          Dropdown
+          Test Pages
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown" ngbDropdownMenu>
-          <a class="dropdown-item" [routerLink]="['/tree']">Tree</a>
+          <a class="dropdown-item" [routerLink]="['/tree']" (click)="toggleCollapse()">Tree</a>
           <a class="dropdown-item">Another action</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item">Something else here</a>
