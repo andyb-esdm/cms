@@ -1,16 +1,6 @@
 <h2>Dashboard</h2>
 
 <div class="grid-wrapper">
-    <app-card>
-        <h5 class="card-header bg-primary text-light">
-            <a [routerLink]="['/help']">Help</a>
-            <i class="fa fa-question-circle pull-right"></i>
-        </h5>
-        <div class="card-body">
-            <app-help-list></app-help-list>
-        </div>
-    </app-card>
-
     <!-- sites -->
     <app-card>
         <h5 class="card-header bg-primary text-light">
@@ -19,6 +9,35 @@
         </h5>
         <div class="card-body">
             <app-sites-list></app-sites-list>
+        </div>
+    </app-card>
+
+    <!-- map -->
+    <app-card>
+        <h5 class="card-header bg-primary text-light">
+            <a [routerLink]="['/map']">Map</a>
+            <i class="fa fa-globe pull-right"></i>
+        </h5>
+        <div class="card-body">
+            <app-map></app-map>
+            <!-- <div class="row">
+                <img class="img-fluid mx-auto" src="./img/map.png">
+            </div> -->
+
+            <p class="card-text">
+                Open map
+            </p>
+        </div>
+    </app-card>
+
+    <!-- help -->
+    <app-card>
+        <h5 class="card-header bg-primary text-light">
+            <a [routerLink]="['/help']">Help</a>
+            <i class="fa fa-question-circle pull-right"></i>
+        </h5>
+        <div class="card-body">
+            <app-help-list></app-help-list>
         </div>
     </app-card>
 
@@ -139,20 +158,5 @@
         </div>
     </app-card>
 
-    <!-- map -->
-    <app-card>
-        <h5 class="card-header bg-primary text-light">Map Report
-            <i class="fa fa-globe pull-right"></i>
-        </h5>
-        <div class="card-body">
-            <app-map></app-map>
-            <!-- <div class="row">
-                    <img class="img-fluid mx-auto" src="./img/map.png">
-                </div> -->
 
-            <p class="card-text">
-                A map report
-            </p>
-        </div>
-    </app-card>
 </div>
