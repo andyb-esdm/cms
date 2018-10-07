@@ -1,10 +1,15 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR, Validator, NG_VALIDATORS } from '@angular/forms';
+
 import { TreeNode } from '../tree-node';
 
 @Component({
   selector: 'app-tree-view',
   templateUrl: './tree-view.component.html',
-  styleUrls: ['./tree-view.component.css']
+  styleUrls: ['./tree-view.component.css'],
+  providers: [
+    { provide: NG_VALUE_ACCESSOR, useExisting: TreeViewComponent, multi: true },
+  ]
 })
 export class TreeViewComponent implements OnInit {
 
@@ -16,6 +21,8 @@ export class TreeViewComponent implements OnInit {
   @Input() parentProperty: string;
   @Input() selectedId: number | string;
 
+  private onChange: (value: number | string) => void;
+
   constructor() {
   }
 
@@ -26,7 +33,18 @@ export class TreeViewComponent implements OnInit {
 
   onSelected(node: TreeNode) {
     this.selectedId = node.id;
+    this.onChange(node.id);
   }
+
+  writeValue(value: number | string) {
+    this.selectedId = value;
+  }
+
+  registerOnChange(onChange: (value: number | string) => void) {
+    this.onChange = onChange;
+  }
+
+  registerOnTouched() {}
 
   collapseAll() {
     this.setCollapse(this.nodes, true);

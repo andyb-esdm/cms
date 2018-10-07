@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { CmsService } from '../cms.service';
 
 @Component({
@@ -11,13 +11,17 @@ export class TreePageComponent implements OnInit {
   projectCodes = [];
   collapseAll: boolean;
   selectAll: boolean;
-  selectedId: number | string;
+
+  name: string;
+  projectTypeCode: number | string;
 
   constructor(private cmsService: CmsService) {
   }
 
   ngOnInit() {
     this.projectCodes = this.cmsService.getProjectCodes();
-    this.selectedId = 'MA06';
+    this.projectTypeCode = 'MI40';
   }
+
 }
+
