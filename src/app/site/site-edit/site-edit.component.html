@@ -1,0 +1,78 @@
+<h2>Edit Site {{site.siteCode}}: {{site.name}}</h2>
+<div class="form-container">
+
+
+  <form #form="ngForm">
+      <div class="form-row">
+        <label for="siteCode" class="col-sm-2 col-form-label-sm">Site Code</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control-sm w-100" id="siteCode" value="SC002">
+        </div>
+        <label for="siteName" class="col-sm-2 col-form-label-sm">Site Name</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control-sm w-100" id="siteName" value="Gilfach Farm">
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="siteType" class="col-sm-2 col-form-label-sm">Site Type</label>
+        <div class="col-sm-3">
+          <select id="siteType" class="form-control-sm w-100">
+            <option selected>Nature Reserve</option>
+            <option>...</option>
+          </select>
+        </div>
+
+        <label for="region" class="col-sm-2 col-form-label-sm">Region</label>
+        <div class="col-sm-3">
+          <select id="region" class="form-control-sm w-100">
+            <option selected>North</option>
+            <option>...</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="planStartYear" class="col-sm-2 col-form-label-sm">Plan Start Year</label>
+        <div class="col-sm-1">
+          <input type="text" class="form-control-sm w-100" id="planStartYear" value="2017">
+        </div>
+        <label for="planLength" class="col-sm-1 col-form-label-sm">Plan Length</label>
+        <div class="col-sm-1">
+          <input type="text" class="form-control-sm w-100" id="planLength" value="5">
+        </div>
+        <label for="planGroup" class="col-sm-2 col-form-label-sm">Plan Group</label>
+        <div class="col-sm-3">
+          <select id="planGroup" class="form-control-sm w-100">
+            <option selected>Nature Vision</option>
+            <option>...</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <label for="siteArea" class="col-sm-2 col-form-label-sm">Site Area</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control-sm w-100" id="siteArea" value="42.3">
+        </div>
+
+
+        <label for="parcelArea" class="col-sm-2 col-form-label-sm">Parcel Area</label>
+        <div class="col-sm-3">
+          <input type="text" class="form-control-sm w-100" id="parcelArea" value="50.1">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-sm-2"></div>
+        <div class="form-check col-sm-2">
+          <input class="form-check-input check-lg" type="checkbox" value="" id="confidential">
+          <label class="form-check-label col-form-label-sm" for="confidential">
+            Confidential
+          </label>
+
+        </div>
+      </div>
+    </form>
+
+</div>
+
+<pre>{{ form.value | json }}</pre>
+
+<button [disabled]="form.pristine || form.invalid">Save</button>

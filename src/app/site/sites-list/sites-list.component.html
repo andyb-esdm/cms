@@ -1,0 +1,15 @@
+
+<div class="input-group mb-3">
+    <div class="input-group-append">
+        <span class="input-group-text"  >Search</span>
+      </div>
+  <input type="text" class="form-control" [(ngModel)]="filter" (input)="filterSites()">
+</div>
+
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let site of sites">
+      <i class="fa fa-fw fa-map-marker site"></i>
+    <a [routerLink]="['/site-details', site.siteCode]">{{ site.name }}</a>
+    <a class="btn btn-primary btn-sm float-right" [routerLink]="['/projects-list', site.siteCode]">projects <span class="badge badge-light">{{ site.projects ? site.projects.length : 0 }}</span></a>
+  </li>
+</ul>

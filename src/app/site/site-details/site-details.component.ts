@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CmsService } from '../cms.service';
+import { CmsService } from '../../cms.service';
 
 @Component({
   selector: 'app-site-details',

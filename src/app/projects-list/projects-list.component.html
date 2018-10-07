@@ -1,7 +1,13 @@
-<h2>Projects for {{ siteCode }}</h2>
-<ul class="list-group">
+<h2 *ngIf="projects && projects.length">Projects for {{ siteCode }}</h2>
+<h2 *ngIf="!projects.length">There are no projects for {{ siteCode }}</h2>
+<div class="row mb-2">
+  <div class="col">
+    <a routerLink="" class="btn btn-primary" [routerLink]="['/edit-project', 0]">Add a new project</a>
+  </div>
+</div>
+<ul class="list-group" *ngIf="projects.length">
   <li class="list-group-item" *ngFor="let project of projects">
     {{ project.id }} {{ project.name }} ({{ project.percentageCompleted ? project.percentageCompleted : 0 }})
-    <a [routerLink]="['/edit-project', project.id]">Edit project {{ project.id }}</a>
+    <a class="btn btn-primary float-right" [routerLink]="['/edit-project', project.id]">Edit project {{ project.id }}</a>
   </li>
 </ul>

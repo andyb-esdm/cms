@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CmsService } from '../cms.service';
+import { CmsService } from '../../cms.service';
 
 @Component({
   selector: 'app-sites-list',

@@ -4,24 +4,26 @@ import { CmsData } from './cms-data';
 export const cmsData: CmsData = {
   sites: [
     {
-      siteCode: 'NNR001', name: 'Gwernvale Farm', projects: [
+      siteCode: 'NNR001', name: 'Gwernvale Farm', siteType: 'National Nature Reserve', confidential: false, area: 100,
+      projects: [
         { id: 1, name: 'monitor small mammals with traps', projectTypeCode: 1, percentageCompleted: 50 },
         { id: 2, name: 'monitor basking lizards by survey', projectTypeCode: 1 },
         { id: 3, name: 'clear litter', projectTypeCode: 8 }
       ]
     },
     {
-      siteCode: 'NNR002', name: 'Bluebell Wood', projects: [
+      siteCode: 'NNR002', name: 'Bluebell Wood', siteType: 'Local Nature Reserve', confidential: false, area: 150,
+      projects: [
         { id: 4, name: 'andyb mammal survey', projectTypeCode: 1, percentageCompleted: 20 }
       ]
     },
     {
-      siteCode: 'NNR003', name: 'Beech Wood', projects: [
+      siteCode: 'NNR003', name: 'Beech Wood', siteType: 'Local Nature Reserve', confidential: false, projects: [
         { id: 5, name: 'andyb other', projectTypeCode: 5 }
       ]
     },
-    { siteCode: 'NNR004', name: 'Table Mountain' },
-    { siteCode: 'NNR005', name: 'Llangattock Escarpment' }
+    { siteCode: 'NNR004', name: 'Table Mountain', siteType: 'National Nature Reserve', confidential: false, },
+    { siteCode: 'NNR005', name: 'Llangattock Escarpment', siteType: 'National Nature Reserve', confidential: false, }
   ],
   projectTypes: [
     { id: 1, name: 'Mammal survey', type: 'Monitoring and Surveys' },
@@ -107,14 +109,14 @@ export const geojsonObject = {
 };
 
 export const helpItems =
-[
-  {id: 1, title: 'Work Recording Guidance', helpText: 'this is the help'},
-  {id: 2, title: 'Copying mapping from an external GIS layer into CMSi', helpText: 'this is the help'},
-  {id: 3, title: 'Management Planning Guidance', helpText: 'this is the help'},
-  {id: 4, title: 'End of Year Review', helpText: 'this is the help'},
-  {id: 5, title: 'Producing a Full Management Plan Report', helpText: 'this is the help'},
-  {id: 6, title: 'Quick Ways to Enter a Management Plan', helpText: 'this is the help'}
-];
+  [
+    { id: 1, title: 'Work Recording Guidance', helpText: 'this is the help' },
+    { id: 2, title: 'Copying mapping from an external GIS layer into CMSi', helpText: 'this is the help' },
+    { id: 3, title: 'Management Planning Guidance', helpText: 'this is the help' },
+    { id: 4, title: 'End of Year Review', helpText: 'this is the help' },
+    { id: 5, title: 'Producing a Full Management Plan Report', helpText: 'this is the help' },
+    { id: 6, title: 'Quick Ways to Enter a Management Plan', helpText: 'this is the help' }
+  ];
 
 export const projectCodes = [
   {

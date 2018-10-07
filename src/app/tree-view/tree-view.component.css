@@ -1,5 +1,5 @@
 .tree-view-container {
     border: 1px solid grey;
     overflow: auto;
-    height: 100%;
+    height: 400px;
 }

@@ -31,7 +31,7 @@ export class CmsService {
 
   getProjects(siteCode: string): Project[] {
     const site = data.cmsData.sites.find(s => s.siteCode === siteCode);
-    return site.projects;
+    return site.projects ? site.projects : [];
   }
 
   getGeoJSON() {

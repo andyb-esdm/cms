@@ -1,63 +1,63 @@
-<h2>
+<h2 *ngIf="id > 0">
   Editing project {{ id }}
 </h2>
+<h2 *ngIf="id === 0">Editing a new project</h2>
 
 <app-form-wizard>
-  <app-wizard-step [title]="'Step1'" [isValid]="projectForm.form.valid" (Next)="onStep1Next()">
-    <form #projectForm="ngForm">
-      <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" name="exampleInputEmail1" aria-describedby="emailHelp"
-          placeholder="Enter email" [(ngModel)]="data.email" required>
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-
-      <ng-select [items]="projectTypes" [multiple]="true" bindLabel="name" groupBy="type" [selectableGroup]="false"
-        [closeOnSelect]="false" bindValue="id" [(ngModel)]="selectedProjectTypes" name="selectProjectTypes">
-        <ng-template ng-optgroup-tmp let-item="item" let-item$="item$" let-index="index">
-          <!-- <input id="item-{{index}}" name="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{item.type | uppercase}} -->
-          <span id="item-{{index}}"> {{item.type | uppercase}} </span>
-        </ng-template>
-        <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
-          <input id="item-{{index}}" name="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{item.name}}
-        </ng-template>
-      </ng-select>
-
-      <p>
-        Selected project types: {{ selectedProjectTypes }}
-      </p>
-
-    </form>
+  <app-wizard-step [title]="'Project name and type'" [isValid]="projectForm.form.valid" (Next)="onStep1Next()">
+      <app-tree-page></app-tree-page>
+    
   </app-wizard-step>
   <app-wizard-step [title]="'Step2'" (Next)="onStep2Next()">
     <div class="wizard-step-body">
 
-        <form class="form-inline">
-          <div class="form-group">
-            <div class="input-group">
-              <input class="form-control" placeholder="yyyy-mm-dd"
-                     name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
-              <div class="input-group-append">
-                <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"><i class="fa fa-calendar"></i></button>
-              </div>
+      <form class="form-inline">
+        <div class="form-group">
+          <div class="input-group">
+            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button"><i class="fa fa-calendar"></i></button>
             </div>
           </div>
-        </form>
-        
-        <hr/>
-        <pre>Model: {{ model | json }}</pre>
+        </div>
+      </form>
+
+      <hr />
+      <pre>Model: {{ model | json }}</pre>
     </div>
-    
-
-
   </app-wizard-step>
   <app-wizard-step [title]="'Step3'" (Next)="onStep3Next()">
+      <form #projectForm="ngForm">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" name="exampleInputEmail1" aria-describedby="emailHelp"
+              placeholder="Enter email" [(ngModel)]="data.email" required>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+    
+          <ng-select [items]="projectTypes" [multiple]="true" bindLabel="name" groupBy="type" [selectableGroup]="false"
+            [closeOnSelect]="false" bindValue="id" [(ngModel)]="selectedProjectTypes" name="selectProjectTypes">
+            <ng-template ng-optgroup-tmp let-item="item" let-item$="item$" let-index="index">
+              <!-- <input id="item-{{index}}" name="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{item.type | uppercase}} -->
+              <span id="item-{{index}}"> {{item.type | uppercase}} </span>
+            </ng-template>
+            <ng-template ng-option-tmp let-item="item" let-item$="item$" let-index="index">
+              <input id="item-{{index}}" name="item-{{index}}" type="checkbox" [ngModel]="item$.selected" /> {{item.name}}
+            </ng-template>
+          </ng-select>
+    
+          <p>
+            Selected project types: {{ selectedProjectTypes }}
+          </p>
+    
+        </form>
   </app-wizard-step>
-  <app-wizard-step [title]="'Step4'" (Complete)="onComplete()">
-    <div [ngSwitch]="isCompleted">
-      <div *ngSwitchCase="true">
-        <h4>Thank you! You have completed all the steps.</h4>
+  <app-wizard-step [title]="'Summary'" (Complete)="onComplete()">
+      <div *ngIf="isCompleted">
+        <h4>Saved the project</h4>
       </div>
-    </div>
+      <div *ngIf="!isCompleted">
+          <h4>Project Summary</h4>
+      </div>
   </app-wizard-step>
 </app-form-wizard>

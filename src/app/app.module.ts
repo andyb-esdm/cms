@@ -14,11 +14,11 @@ import { EditProjectComponent } from './edit-project/edit-project.component';
 import { MapComponent } from './map/map.component';
 import { FormWizardComponent } from './form-wizard/form-wizard.component';
 import { WizardStepComponent } from './wizard-step/wizard-step.component';
-import { SitesListComponent } from './sites-list/sites-list.component';
-import { SiteDetailsComponent } from './site-details/site-details.component';
+import { SitesListComponent } from './site/sites-list/sites-list.component';
+import { SiteDetailsComponent } from './site/site-details/site-details.component';
 import { ProjectsListComponent } from './projects-list/projects-list.component';
 import { MapPageComponent } from './map-page/map-page.component';
-import { SitesComponent } from './sites/sites.component';
+import { SitesComponent } from './site/sites/sites.component';
 import { HelpComponent } from './help/help.component';
 import { HelpListComponent } from './help-list/help-list.component';
 import { HelpDetailsComponent } from './help-details/help-details.component';
@@ -26,6 +26,7 @@ import { CardComponent } from './card/card.component';
 import { TreeComponent } from './tree/tree.component';
 import { TreePageComponent } from './tree-page/tree-page.component';
 import { TreeViewComponent } from './tree-view/tree-view.component';
+import { SiteEditComponent } from './site/site-edit/site-edit.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { TreeViewComponent } from './tree-view/tree-view.component';
     CardComponent,
     TreeComponent,
     TreePageComponent,
-    TreeViewComponent
+    TreeViewComponent,
+    SiteEditComponent
   ],
   imports: [
     BrowserModule,
