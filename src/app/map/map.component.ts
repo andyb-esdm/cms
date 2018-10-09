@@ -16,7 +16,7 @@ import condition from 'ol/events/condition';
 import { CmsService } from '../cms.service';
 
 
-const mapExtent = proj.transformExtent([5, 50, 6, 53], 'EPSG:4326', 'EPSG:3857');
+const mapExtent = proj.transformExtent([5, 50.9, 6, 53], 'EPSG:4326', 'EPSG:3857');
 
 const marker = new Style({
   image: new Icon({

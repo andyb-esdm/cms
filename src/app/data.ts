@@ -146,6 +146,26 @@ export const sitesGeoJson = {
       'properties': {
         'siteCode': 'NNR003'
       }
+    },
+    {
+      'type': 'Feature',
+      'geometry': {
+        'type': 'Point',
+        'coordinates': [508937.71, 6891041.72]
+      },
+      'properties': {
+        'siteCode': 'NNR004'
+      }
+    },
+    {
+      'type': 'Feature',
+      'geometry': {
+        'type': 'Point',
+        'coordinates': [434146.01, 6692356.44]
+      },
+      'properties': {
+        'siteCode': 'NNR005'
+      }
     }]
 };
 
