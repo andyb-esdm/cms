@@ -28,3 +28,12 @@
     width: 20%;
 }
 
+.image-container {
+    height: 400px;
+}
+
+img {
+    height: 100%;
+}
+
+

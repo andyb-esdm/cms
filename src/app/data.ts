@@ -12,18 +12,19 @@ export const cmsData: CmsData = {
       ]
     },
     {
-      siteCode: 'NNR002', name: 'Bluebell Wood', siteType: 'Local Nature Reserve', confidential: false, area: 150,
+      siteCode: 'NNR002', name: 'Bluebell Wood', siteType: 'Local Nature Reserve', confidential: false, area: 150, image: true,
       projects: [
         { id: 4, name: 'andyb mammal survey', projectTypeCode: 1, percentageCompleted: 20 }
       ]
     },
     {
-      siteCode: 'NNR003', name: 'Beech Wood', siteType: 'Local Nature Reserve', confidential: false, projects: [
+      siteCode: 'NNR003', name: 'Beech Wood', siteType: 'Local Nature Reserve', confidential: false, image: true,
+      projects: [
         { id: 5, name: 'andyb other', projectTypeCode: 5 }
       ]
     },
-    { siteCode: 'NNR004', name: 'Table Mountain', siteType: 'National Nature Reserve', confidential: false, },
-    { siteCode: 'NNR005', name: 'Llangattock Escarpment', siteType: 'National Nature Reserve', confidential: true, }
+    { siteCode: 'NNR004', name: 'Table Mountain', siteType: 'National Nature Reserve', confidential: false, image: true },
+    { siteCode: 'NNR005', name: 'Llangattock Escarpment', siteType: 'National Nature Reserve', confidential: true, image: true }
   ],
   projectTypes: [
     { id: 1, name: 'Mammal survey', type: 'Monitoring and Surveys' },

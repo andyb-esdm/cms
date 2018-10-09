@@ -4,13 +4,18 @@
     <div class="site-details-panel" [ngClass]="{ 'show' : showSiteDetails }">
         <div *ngIf="this.site">
             <div>
-                {{site.siteCode}}
-            </div>
-            <div>
-                {{site.name}}
-            </div>
+                <div *ngIf="site.image">
+                    <div class="image-container">
+                        <img [src]="'assets/' + site.siteCode + '.jpg'">
+                    </div>
+                </div>
+                <div>
+                    {{site.siteCode}}
+                </div>
+                <div>
+                    {{site.name}}
+                </div>
 
-            <div>
                 <button class="btn btn-primary" [routerLink]="['/site-details', site.siteCode]">Details</button>
             </div>
         </div>
