@@ -108,6 +108,47 @@ export const geojsonObject = {
   }]
 };
 
+export const sitesGeoJson = {
+  'type': 'FeatureCollection',
+  'crs': {
+    'type': 'name',
+    'properties': {
+      'name': 'EPSG:4326'
+    }
+  },
+  'features': [
+    {
+      'type': 'Feature',
+      'geometry': {
+        'type': 'Point',
+        'coordinates': [5.3, 51],
+        'properties': {
+          'siteCode': 'NNR001'
+        }
+      }
+    },
+    {
+      'type': 'Feature',
+      'geometry': {
+        'type': 'Point',
+        'coordinates': [5.7, 52],
+        'properties': {
+          'siteCode': 'NNR002'
+        }
+      }
+    },
+    {
+      'type': 'Feature',
+      'geometry': {
+        'type': 'Point',
+        'coordinates': [5.5, 52.5],
+        'properties': {
+          'siteCode': 'NNR003'
+        }
+      }
+    }]
+};
+
 export const helpItems =
   [
     { id: 1, title: 'Work Recording Guidance', helpText: 'this is the help' },

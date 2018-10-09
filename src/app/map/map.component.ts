@@ -7,8 +7,11 @@ import VectorLayer from 'ol/layer/vector';
 import XYZ from 'ol/source/XYZ';
 import VectorSource from 'ol/source/vector';
 import GeoJSON from 'ol/format/GeoJSON.js';
+import proj from 'ol/proj';
 
 import { CmsService } from '../cms.service';
+
+const mapExtent = proj.transformExtent([5, 50, 6, 53], 'EPSG:4326', 'EPSG:3857');
 
 @Component({
   selector: 'app-map',
@@ -23,7 +26,8 @@ export class MapComponent implements OnInit {
   constructor(private cmsService: CmsService) { }
 
   ngOnInit() {
-    this.geoJsonObject = this.cmsService.getGeoJSON();
+    // this.geoJsonObject = this.cmsService.getSitesGeoJson();
+    this.geoJsonObject = this.cmsService.getSitesGeoJson();
     this.setupMap();
     this.setupVectorLayers();
   }
@@ -43,16 +47,23 @@ export class MapComponent implements OnInit {
         zoom: 2
       })
     });
+    this.map.getView().fit(mapExtent);
   }
 
   private setupVectorLayers() {
     const vectorSource = new VectorSource({
-      features: (new GeoJSON()).readFeatures(this.geoJsonObject)
+      features: (new GeoJSON()).readFeatures(this.geoJsonObject, {
+        featureProjection: 'EPSG:3857',
+        dataProjection: 'EPSG: 4326'
+       })
     });
 
-    this.map.addLayer(new VectorLayer({
+    const sitesLayer = new VectorLayer({
       source: vectorSource
-    })
-    );
+    });
+
+    this.map.addLayer(sitesLayer);
+
+    console.log(vectorSource.getFeatures());
   }
 }

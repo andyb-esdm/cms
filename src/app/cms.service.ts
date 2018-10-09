@@ -38,6 +38,10 @@ export class CmsService {
     return data.geojsonObject;
   }
 
+  getSitesGeoJson() {
+    return data.sitesGeoJson;
+  }
+
   getHelpItems() {
     return data.helpItems;
   }
