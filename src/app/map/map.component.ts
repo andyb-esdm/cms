@@ -14,6 +14,7 @@ import Select from 'ol/interaction/select';
 import condition from 'ol/events/condition';
 
 import { CmsService } from '../cms.service';
+import { MapService } from '../map.service';
 
 
 const mapExtent = proj.transformExtent([5, 50.9, 6, 53], 'EPSG:4326', 'EPSG:3857');
@@ -50,7 +51,7 @@ export class MapComponent implements OnInit {
   sitesLayer;
   selectClick;
 
-  constructor(private cmsService: CmsService) { }
+  constructor(private cmsService: CmsService, private mapService: MapService) { }
 
   ngOnInit() {
 
@@ -100,10 +101,11 @@ export class MapComponent implements OnInit {
     });
 
     this.map.addInteraction(this.selectClick);
-    this.selectClick.on('select', function (e) {
+    this.selectClick.on('select', (e) => {
         var features = e.target.getFeatures().getArray();
         if (features.length) {
-            console.log(features[0].get('siteCode'));
+            let siteCode = features[0].get('siteCode');
+            this.mapService.siteSelected(siteCode);
             }
         });
     }

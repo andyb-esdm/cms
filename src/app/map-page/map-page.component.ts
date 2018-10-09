@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MapService } from '../map.service';
 
 @Component({
   selector: 'app-map-page',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private mapService: MapService) { }
 
   ngOnInit() {
+    this.mapService.siteCodeChanged$.subscribe(
+      siteCode => console.log('map page: ' + siteCode)
+    );
   }
 
 }
