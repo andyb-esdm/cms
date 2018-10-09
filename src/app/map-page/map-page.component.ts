@@ -1,6 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MapService } from '../map.service';
 import { Subscription } from 'rxjs';
+import { CmsService } from '../cms.service';
+import { Site } from '../site';
 
 @Component({
   selector: 'app-map-page',
@@ -11,12 +13,25 @@ export class MapPageComponent implements OnInit, OnDestroy {
 
   subscription: Subscription;
 
-  constructor(private mapService: MapService) { }
+  showSiteDetails = false;
+  site: Site;
+
+  constructor(private mapService: MapService, private cmsService: CmsService) { }
 
   ngOnInit() {
     this.subscription = this.mapService.siteCodeChanged$.subscribe(
-      siteCode => console.log('map page: ' + siteCode)
+      siteCode => this.showSite(siteCode)
     );
+  }
+
+  showSite(siteCode) {
+    if (siteCode) {
+      this.showSiteDetails = true;
+      this.site = this.cmsService.getSite(siteCode);
+    } else {
+      this.showSiteDetails = false;
+      this.site = null;
+    }
   }
 
   ngOnDestroy() {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { CmsService } from '../../cms.service';
 
 @Component({
@@ -13,7 +13,6 @@ export class SiteDetailsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private cmsService: CmsService
   ) { }
 

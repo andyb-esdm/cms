@@ -1,0 +1,30 @@
+:host {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+}
+
+.site-details-panel {
+    width: 0;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: lightgrey;
+    transition: 0.5s;
+    height: 100%;
+}
+
+.site-details-panel.show {
+    padding: 10px;
+    width: 20%;
+}
+

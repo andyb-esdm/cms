@@ -19,4 +19,8 @@ export class MapService {
       this.siteCodeChangedSource.next(siteCode);
     }
   }
+
+  siteUnselected() {
+    this.siteCodeChangedSource.next(null);
+  }
 }

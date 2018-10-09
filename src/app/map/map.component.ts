@@ -105,10 +105,13 @@ export class MapComponent implements OnInit, AfterViewInit {
 
     this.map.addInteraction(this.selectClick);
     this.selectClick.on('select', (e) => {
-        var features = e.target.getFeatures().getArray();
+        const features = e.target.getFeatures().getArray();
         if (features.length) {
-            let siteCode = features[0].get('siteCode');
+            const siteCode = features[0].get('siteCode');
             this.mapService.siteSelected(siteCode);
+            // this.map.updateSize();
+            } else {
+              this.mapService.siteUnselected();
             }
         });
     }

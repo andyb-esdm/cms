@@ -1,4 +1,18 @@
 <h2>Sites Map</h2>
-<div class="map-container">
+<div class="main-container">
     <app-map></app-map>
+    <div class="site-details-panel" [ngClass]="{ 'show' : showSiteDetails }">
+        <div *ngIf="this.site">
+            <div>
+                {{site.siteCode}}
+            </div>
+            <div>
+                {{site.name}}
+            </div>
+
+            <div>
+                <button class="btn btn-primary" [routerLink]="['/site-details', site.siteCode]">Details</button>
+            </div>
+        </div>
+    </div>
 </div>
