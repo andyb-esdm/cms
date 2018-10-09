@@ -7,4 +7,5 @@ export interface Site {
     siteType: string;
     area?: number;
     confidential: boolean;
+    image?: boolean;
 }

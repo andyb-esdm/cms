@@ -25,7 +25,7 @@ const marker = new Style({
       anchorXUnits: 'fraction',
       anchorYUnits: 'pixels',
       opacity: 0.85,
-      src: '/assets/map-marker-red.png'
+      src: 'assets/map-marker-red.png'
   })
 });
 
@@ -35,7 +35,7 @@ const markerSelected = new Style({
       anchorXUnits: 'fraction',
       anchorYUnits: 'pixels',
       opacity: 0.85,
-      src: '/assets/map-marker-green.png'
+      src: 'assets/map-marker-green.png'
   })
 });
 
