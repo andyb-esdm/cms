@@ -1,13 +1,2 @@
 @import url(https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/css/ol.css);
 
-:host {
-    height: 100%;
-}
-
-#mapContainer {
-    height: 100%;
-}
-
-#map {
-    height: 100%;
-}

@@ -2,16 +2,41 @@ import { Component, OnInit } from '@angular/core';
 
 import Map from 'ol/map';
 import View from 'ol/view';
-import TileLayer from 'ol/layer/tile';
+import Tile from 'ol/layer/tile';
 import VectorLayer from 'ol/layer/vector';
-import XYZ from 'ol/source/XYZ';
 import VectorSource from 'ol/source/vector';
-import GeoJSON from 'ol/format/GeoJSON.js';
+import OSM from 'ol/source/OSM';
+import GeoJSON from 'ol/format/GeoJSON';
 import proj from 'ol/proj';
+import Style from 'ol/style/style';
+import Icon from 'ol/style/icon';
+import Select from 'ol/interaction/select';
+import condition from 'ol/events/condition';
 
 import { CmsService } from '../cms.service';
 
+
 const mapExtent = proj.transformExtent([5, 50, 6, 53], 'EPSG:4326', 'EPSG:3857');
+
+const marker = new Style({
+  image: new Icon({
+      anchor: [0.5, 14],
+      anchorXUnits: 'fraction',
+      anchorYUnits: 'pixels',
+      opacity: 0.85,
+      src: '/assets/map-marker-red.png'
+  })
+});
+
+const markerSelected = new Style({
+  image: new Icon({
+      anchor: [0.5, 14],
+      anchorXUnits: 'fraction',
+      anchorYUnits: 'pixels',
+      opacity: 0.85,
+      src: '/assets/map-marker-green.png'
+  })
+});
 
 @Component({
   selector: 'app-map',
@@ -22,24 +47,26 @@ export class MapComponent implements OnInit {
 
   map: Map;
   geoJsonObject;
+  sitesLayer;
+  selectClick;
 
   constructor(private cmsService: CmsService) { }
 
   ngOnInit() {
+
     // this.geoJsonObject = this.cmsService.getSitesGeoJson();
     this.geoJsonObject = this.cmsService.getSitesGeoJson();
     this.setupMap();
     this.setupVectorLayers();
+    this.setupFeatureSelect();
   }
 
   private setupMap() {
     this.map = new Map({
       target: 'map',
       layers: [
-        new TileLayer({
-          source: new XYZ({
-            url: 'https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-          })
+        new Tile({
+          source: new OSM()
         })
       ],
       view: new View({
@@ -52,18 +79,32 @@ export class MapComponent implements OnInit {
 
   private setupVectorLayers() {
     const vectorSource = new VectorSource({
-      features: (new GeoJSON()).readFeatures(this.geoJsonObject, {
-        featureProjection: 'EPSG:3857',
-        dataProjection: 'EPSG: 4326'
-       })
+      features: (new GeoJSON()).readFeatures(this.geoJsonObject)
     });
 
-    const sitesLayer = new VectorLayer({
+    this.sitesLayer = new VectorLayer({
       source: vectorSource
     });
 
-    this.map.addLayer(sitesLayer);
-
-    console.log(vectorSource.getFeatures());
+    this.sitesLayer.setStyle(marker);
+    this.map.addLayer(this.sitesLayer);
   }
+
+  private setupFeatureSelect() {
+    this.selectClick = new Select({
+        condition: condition.click,
+        toggleCondition: condition.never,
+        layers: [this.sitesLayer],
+        multi: false,
+        style: markerSelected
+    });
+
+    this.map.addInteraction(this.selectClick);
+    this.selectClick.on('select', function (e) {
+        var features = e.target.getFeatures().getArray();
+        if (features.length) {
+            console.log(features[0].get('siteCode'));
+            }
+        });
+    }
 }
