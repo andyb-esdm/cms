@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 import Map from 'ol/map';
 import View from 'ol/view';
@@ -44,7 +44,7 @@ const markerSelected = new Style({
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.css']
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements OnInit, AfterViewInit {
 
   map: Map;
   geoJsonObject;
@@ -57,6 +57,9 @@ export class MapComponent implements OnInit {
 
     // this.geoJsonObject = this.cmsService.getSitesGeoJson();
     this.geoJsonObject = this.cmsService.getSitesGeoJson();
+  }
+
+  ngAfterViewInit() {
     this.setupMap();
     this.setupVectorLayers();
     this.setupFeatureSelect();
