@@ -4,7 +4,7 @@ import { CmsData } from './cms-data';
 export const cmsData: CmsData = {
   sites: [
     {
-      siteCode: 'NNR001', name: 'Gwernvale Farm', siteType: 'National Nature Reserve', confidential: false, area: 100,
+      siteCode: 'NNR001', name: 'Gwernvale Farm', siteType: 'National Nature Reserve', confidential: false, area: 100, image: true,
       projects: [
         { id: 1, name: 'monitor small mammals with traps', projectTypeCode: 1, percentageCompleted: 50 },
         { id: 2, name: 'monitor basking lizards by survey', projectTypeCode: 1 },
@@ -23,7 +23,7 @@ export const cmsData: CmsData = {
       ]
     },
     { siteCode: 'NNR004', name: 'Table Mountain', siteType: 'National Nature Reserve', confidential: false, },
-    { siteCode: 'NNR005', name: 'Llangattock Escarpment', siteType: 'National Nature Reserve', confidential: false, }
+    { siteCode: 'NNR005', name: 'Llangattock Escarpment', siteType: 'National Nature Reserve', confidential: true, }
   ],
   projectTypes: [
     { id: 1, name: 'Mammal survey', type: 'Monitoring and Surveys' },
