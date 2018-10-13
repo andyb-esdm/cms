@@ -27,6 +27,7 @@ import { TreeComponent } from './tree/tree.component';
 import { TreePageComponent } from './tree-page/tree-page.component';
 import { TreeViewComponent } from './tree-view/tree-view.component';
 import { SiteEditComponent } from './site/site-edit/site-edit.component';
+import { ProjectsPageComponent } from './projects-page/projects-page.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { SiteEditComponent } from './site/site-edit/site-edit.component';
     TreeComponent,
     TreePageComponent,
     TreeViewComponent,
-    SiteEditComponent
+    SiteEditComponent,
+    ProjectsPageComponent
   ],
   imports: [
     BrowserModule,

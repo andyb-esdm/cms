@@ -20,14 +20,12 @@ ul {
     padding: 0;
 }
 
-h2 {
+/* h2 {
     background-color: #cddcf2;
-    margin-left: -15px;
-    margin-right: -15px;
     padding-left: 20px;
     padding-bottom: 10px;
     padding-top: 10px;
-}
+} */
 
 .card h2 {
     margin-left: 0px;

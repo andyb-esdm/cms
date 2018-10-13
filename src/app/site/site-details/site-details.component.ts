@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CmsService } from '../../cms.service';
+import { Subscription } from 'rxjs';
+import { Site } from '../../site';
 
 @Component({
   selector: 'app-site-details',
   templateUrl: './site-details.component.html',
   styleUrls: ['./site-details.component.css']
 })
-export class SiteDetailsComponent implements OnInit {
+export class SiteDetailsComponent implements OnInit, OnDestroy {
 
-  site: any;
+  site: Site;
+  subscription: Subscription;
 
   constructor(
     private route: ActivatedRoute,
@@ -17,8 +20,13 @@ export class SiteDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    const siteCode = this.route.snapshot.params['siteCode'];
-    this.site = this.cmsService.getSite(siteCode);
+    this.subscription = this.route.params.subscribe(params => {
+      this.site = this.cmsService.getSite(params['siteCode']);
+    });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }

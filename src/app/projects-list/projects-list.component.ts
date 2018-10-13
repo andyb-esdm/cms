@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CmsService } from '../cms.service';
-import { Router, ActivatedRoute } from '@angular/router';
 import { Project } from '../project';
 
 @Component({
@@ -10,17 +9,12 @@ import { Project } from '../project';
 })
 export class ProjectsListComponent implements OnInit {
 
-  siteCode: string;
+  @Input() siteCode: string;
   projects: Project[] = [];
 
-  constructor(
-    private route: ActivatedRoute,
-    private router: Router,
-    private cmsService: CmsService
-  ) { }
+  constructor(private cmsService: CmsService) { }
 
   ngOnInit() {
-    this.siteCode = this.route.snapshot.params['siteCode'];
     this.projects = this.cmsService.getProjects(this.siteCode);
   }
 

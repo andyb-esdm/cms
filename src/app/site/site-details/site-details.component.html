@@ -1,14 +1,18 @@
-<h2>{{ site.siteCode }} {{ site.name }} <a class="btn btn-primary mb-2" [routerLink]="['/site-edit', site.siteCode]">Edit Site</a></h2>
-<h3>{{ site.siteType }} <span *ngIf="site.area"> ({{ site.area }} Ha.)</span></h3>
-<div *ngIf="site.confidential" class="alert alert-danger">
-    This site is confidential
-</div>
-<div class="image-container" *ngIf="site.image">
-    <img [src]="'assets/' + site.siteCode + '.jpg'">
+<div class="container-fluid mt-2">
+    <h2>{{ site.siteCode }} {{ site.name }} <a class="btn btn-primary mb-2" [routerLink]="['/site-edit', site.siteCode]">Edit
+            Site</a></h2>
 </div>
 
-<div>
-    <app-projects-list></app-projects-list>
+<div class="col">
+    <h3>{{ site.siteType }} <span *ngIf="site.area"> ({{ site.area }} Ha.)</span></h3>
+    <div *ngIf="site.confidential" class="alert alert-danger">
+        This site is confidential
+    </div>
+    <div class="image-container" *ngIf="site.image">
+        <img [src]="'assets/' + site.siteCode + '.jpg'">
+    </div>
 </div>
 
-
+<div class="container-fluid mt-2">
+    <app-projects-list [siteCode]="site.siteCode"></app-projects-list>
+</div>

@@ -5,3 +5,7 @@
 img {
     height: 100%;
 }
+
+:host {
+    flex-grow: 1;
+}

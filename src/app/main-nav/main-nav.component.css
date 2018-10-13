@@ -3,7 +3,6 @@ a {
 }
 
 .navbar-spacer {
-    height: 10px;
-    /* background-color: #7F3F66; */
+    height: 5px;
     background-color: rgb(107, 158, 30);
 }

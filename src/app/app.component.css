@@ -4,18 +4,27 @@
     height: 100%;
 }
 
-.container-fluid {
-    overflow: auto;
+.main {
+   overflow: auto;
     flex-grow: 1;
     height: 100%;
+    background-color: #cddcf2;
     display: flex;
     flex-direction: column;
-    background-color: #cddcf2;
 }
 
-footer {
+.footer-content {
     font-size: 1rem;
     padding: .5rem 1rem;
     color: white;
     background-color: #0064a3;
+}
+
+.footer-spacer {
+    height: 5px;
+    background-color: rgb(107, 158, 30);
+}
+
+.main-row {
+    flex-grow: 1;
 }

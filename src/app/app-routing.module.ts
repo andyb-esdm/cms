@@ -12,6 +12,7 @@ import { HelpComponent } from './help/help.component';
 import { HelpDetailsComponent } from './help-details/help-details.component';
 import { TreePageComponent } from './tree-page/tree-page.component';
 import { SiteEditComponent } from './site/site-edit/site-edit.component';
+import { ProjectsPageComponent } from './projects-page/projects-page.component';
 
 const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -19,7 +20,7 @@ const routes: Routes = [
   { path: 'sites', component: SitesComponent },
   { path: 'site-details/:siteCode', component: SiteDetailsComponent },
   { path: 'site-edit/:siteCode', component: SiteEditComponent },
-  { path: 'projects-list/:siteCode', component: ProjectsListComponent },
+  { path: 'projects/:siteCode', component: ProjectsPageComponent },
   { path: 'help', component: HelpComponent },
   { path: 'help-details/:id', component: HelpDetailsComponent },
   { path: 'map', component: MapPageComponent },

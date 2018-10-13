@@ -2,10 +2,16 @@
   <app-main-nav></app-main-nav>
 </header>
 
-<div class="container-fluid">
-  <router-outlet></router-outlet>
+<div class="container-fluid main">
+  <div class="row main-row">
+      <router-outlet></router-outlet>
+  </div>
 </div>
 
 <footer>
-  CMS - The Countryside Management System &copy; {{ year }}
+  <div class="footer-spacer"></div>
+  <div class="footer-content">
+      CMS - The Countryside Management System &copy; {{ year }}
+  </div>
+  
 </footer>
