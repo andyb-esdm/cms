@@ -1,12 +1,5 @@
 @import url(https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/css/ol.css);
 
-/* :host {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    height: 100%;
-} */
-
 :host {
     flex-grow: 1;
     display: flex;
